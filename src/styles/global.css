@@ -35,3 +35,11 @@
   --depth: 0;
   --noise: 0;
 }
+
+.pixel-font {
+  font-family: 'VT323', 'Press Start 2P', monospace;
+  letter-spacing: 0.5px;
+}
+.pixelated {
+  image-rendering: pixelated;
+}
