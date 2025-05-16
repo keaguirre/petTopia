@@ -1,6 +1,15 @@
 ---
+import { SignIn, SignedOut, SignInButton, SignOutButton, UserButton } from "@clerk/astro/components";
+import MainLayout from "../layouts/MainLayout.astro";
 ---
+<SignedOut>
+    <h1> You are not logged in </h1>
+    <SignInButton class="btn btn-primary btn-block" mode="modal">
+</SignedOut>
+<SignIn path="/profile"/>
+    <h1> Ya estas logeado </h1>
+    <SignOutButton>Cerrar Sesion</SignOutButton>
+</SignIn>
 
-<h1><a href="/login">login</a></h1>
-<h1><a href="/register">register</a></h1>
-<h1><a href="/home">home</a></h1>
+<h1>Test</h1>
+<UserButton></UserButton>
