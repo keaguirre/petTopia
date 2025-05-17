@@ -1,0 +1,20 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { Image } from "astro:assets";
+import png404 from "../media/assets/404.png"
+import '../styles/global.css';
+import Navbar from '../components/Navbar.astro';
+---
+<Navbar></Navbar>
+<MainLayout title="404 - Página no encontrada">
+    <div class="mt-5 flex flex-col items-center justify-center h-full">
+        <Image
+            src={png404}
+            alt="Página no encontrada"
+            class=""
+            width={500}
+            height={500}></Image>
+        <p class="mt-4 text-gray-600 text-2xl">Página no encontrada</p>
+        <a href="/" class="mt-6 px-4 py-2 text-[#5E3A21] rounded">Volver a la página principal</a>
+    </div>
+</MainLayout>

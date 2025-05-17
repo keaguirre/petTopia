@@ -1,0 +1,18 @@
+---
+import { SignedIn, SignedOut, SignInButton, SignOutButton, UserButton } from "@clerk/astro/components";
+---
+<navbar class="px-4 py-3 bg-[#FF9D5C] border-b-4 border-[#8B4513] z-10">
+    <div class="container mx-auto flex justify-between items-center">
+    <div class="flex items-center gap-2">
+        <!-- <img src="/images/pettopia-logo.png" alt="PetTopia Logo" width="40" height="40" class="pixelated" /> -->
+        <h1 class="text-2xl font-bold text-white pixel-font"><a href="/">PetTopia</a></h1>
+    </div>
+    <nav class="hidden md:flex gap-6">
+        <a href="/play" class="text-white hover:text-yellow-200 transition pixel-font">Juega</a>
+        <SignedIn>
+            <a href="/profile" class="text-white hover:text-yellow-200 transition pixel-font">Cuenta</a><!--if logged in -->
+            <UserButton>
+        </SignedIn>
+    </nav>
+    </div>
+</navbar>
