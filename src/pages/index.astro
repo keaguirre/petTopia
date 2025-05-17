@@ -59,9 +59,12 @@ import pets from '../media/assets/pets.png'
         Create, customize, and care for your virtual pets in a nostalgic pixel world!
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-        <button class="bg-[#FF9D5C] hover:bg-[#FF7A37] text-white border-2 border-[#8B4513] rounded-lg px-6 py-3 text-lg pixel-font">
-            Inicia sesión para comenzar
-        </button>
+        <SignInButton asChild mode="modal">
+            <button class="bg-[#FF9D5C] hover:bg-[#FF7A37] text-white border-2 border-[#8B4513] rounded-lg px-6 py-3 text-lg pixel-font">
+                Inicia sesión para comenzar
+            </button>
+        </SignInButton>
+
         <button class="border-2 border-[#8B4513] text-[#8B4513] hover:bg-[#FFD700] hover:text-[#8B4513] rounded-lg px-6 py-3 text-lg pixel-font">
             Clerk Docs
         </button>
