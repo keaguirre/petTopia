@@ -45,35 +45,44 @@ import Navbar from '../components/Navbar.astro';
   </div>
 
   <!-- Script to handle modal logic -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        console.log("DOM fully loaded and parsed");
-      const modalToggle = document.getElementById("charSelModal");
+<script type="module">
+  const characterButtons = ["cat", "dog", "chicken"];
 
-      // Abrir modal si no hay personaje seleccionado
-      if (
-        modalToggle &&
-        modalToggle instanceof HTMLInputElement &&
-        !localStorage.getItem("selectedCharacter")
-      ) {
-        console.log("No hay personaje seleccionado, abriendo modal");
+  async function initCharacterSelection() {
+    await window.Clerk.load();
+
+    const user = await window.Clerk.user;
+    const currentCharacter = user.unsafeMetadata.character;
+
+    if (!currentCharacter) {
+      const modalToggle = document.getElementById("charSelModal");
+      if (modalToggle) {
         modalToggle.checked = true;
       }
+    }
 
-      // Asignar listeners a botones de personajes
-      ["cat", "dog", "chicken"].forEach((id) => {
-        const btn = document.getElementById(id);
-        if (btn) {
-          btn.addEventListener("click", () => {
-            console.log(`Seleccionaste: ${id}`);
-            localStorage.setItem("selectedCharacter", id);
-            if (modalToggle instanceof HTMLInputElement) {
-                console.log("Cerrando modal");
-              modalToggle.checked = false;
-            }
+    characterButtons.forEach((id) => {
+      const button = document.getElementById(id);
+      if (button) {
+        button.addEventListener("click", async () => {
+          console.log(`Seleccionaste: ${id}`);
+
+          await user.update({
+            unsafeMetadata: {
+              character: id,
+            },
           });
-        }
-      });
+
+          const modalToggle = document.getElementById("charSelModal");
+          if (modalToggle) {
+            modalToggle.checked = false;
+          }
+        });
+      }
     });
-  </script>
+  }
+
+  document.addEventListener("DOMContentLoaded", initCharacterSelection);
+</script>
+
 </MainLayout>
