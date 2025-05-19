@@ -1,0 +1,66 @@
+---
+import '../styles/global.css';
+import { Image } from 'astro:assets';
+import gato from '../media/assets/gato_x16.png'
+import perro from '../media/assets/perro_x16.png'
+import pollo from '../media/assets/pollo_x16.png'
+import { propsToFilename } from 'astro/assets/utils';
+import { astroCalledServerError } from 'astro:actions';
+type Props = {
+  charSelModalId: string; // Reemplaza 'Tipo' por el tipo real
+};
+
+const { charSelModalId } = Astro.props;
+// Si quieres que sea obligatorio y lanzar error si falta:
+
+---
+<input type="checkbox" id={charSelModalId} class="modal-toggle" />
+<div class="modal" role="dialog">
+  <div class="modal-box">
+<section id="features" class="py-16 glass border-t-4 border-b-4 border-[#8B4513] w-auto">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12 text-[#8B4513] pixel-font">Selecciona tu personaje!</h2>
+    <div class="flex justify-center gap-8">
+      <!-- Character 1 -->
+      <button id="cat" class="bg-white border-4 border-[#8B4513] rounded-lg p-6 text-center transform transition-transform hover:scale-105 hover:-rotate-1 flex flex-col items-center w-80">
+          <Image src={gato} alt="Adopt Pets" class="pixelated max-h-52 w-auto" />
+        <h3 class="text-xl font-bold mb-2 text-[#8B4513] pixel-font">Tom</h3>
+      </button>
+      <!-- Character 2 -->
+      <button id="dog" class="bg-white border-4 border-[#8B4513] rounded-lg p-6 text-center transform transition-transform hover:scale-105 hover:rotate-1 flex flex-col items-center w-80">
+          <Image src={perro} alt="Decorate Homes" class="pixelated max-h-52 w-auto" />
+        <h3 class="text-xl font-bold mb-2 text-[#8B4513] pixel-font">Pancho</h3>
+      </button>
+      <!-- Character 3 -->
+      <button id="chicken" class="bg-white border-4 border-[#8B4513] rounded-lg p-6 text-center transform transition-transform hover:scale-105 hover:-rotate-1 flex flex-col items-center w-80">
+          <Image src={pollo} alt="Make Friends" class="pixelated max-h-52 w-auto" />
+        <h3 class="text-xl font-bold mb-2 text-[#8B4513] pixel-font">Manuel</h3>
+      </button>
+    </div>
+  </div>
+</section>
+  </div>
+  <label class="modal-backdrop" for="charSelModal">Close</label>
+</div>
+
+<script type="module">
+  document.addEventListener("DOMContentLoaded", () => {
+    const characterButtons = ["cat", "dog", "chicken"];
+
+    characterButtons.forEach((id) => {
+      const button = document.getElementById(id);
+      if (button) {
+        button.addEventListener("click", () => {
+          console.log(`Seleccionaste: ${id}`);
+          // Aquí puedes guardar el personaje seleccionado en localStorage, una variable global, o disparar otro evento.
+          localStorage.setItem("selectedCharacter", id);
+          // Si quieres cerrar el modal después de seleccionar:
+          const modalToggle = document.getElementById("charSelModal");
+          if (modalToggle) {
+            modalToggle.checked = false;
+          }
+        });
+      }
+    });
+  });
+</script>

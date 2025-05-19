@@ -1,7 +1,79 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
+import '../styles/global.css';
+import { Image } from 'astro:assets';
+import MainLayout from '../layouts/MainLayout.astro';
+import gato from '../media/assets/gato_x16.png';
+import perro from '../media/assets/perro_x16.png';
+import pollo from '../media/assets/pollo_x16.png';
+import Navbar from '../components/Navbar.astro';
 ---
 
-<MainLayout title="Home Play">
-    <h1> Home play protected </h1>
+<Navbar></Navbar>
+<MainLayout>
+  <!-- Hidden checkbox to control modal -->
+  <input type="checkbox" id="charSelModal" class="modal-toggle" />
+  <div class="modal" role="dialog">
+    <div class="modal-box">
+      <section class="py-16 glass border-t-4 border-b-4 border-[#8B4513] w-auto">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-bold text-center mb-12 text-[#8B4513] pixel-font">
+            ¡Selecciona tu personaje!
+          </h2>
+          <div class="flex justify-center gap-8">
+            <!-- Gato -->
+            <button id="cat" class="bg-white border-4 border-[#8B4513] rounded-lg p-6 text-center transition-transform hover:scale-105 hover:-rotate-1 flex flex-col items-center w-80">
+              <Image src={gato} alt="Tom" class="pixelated max-h-52 w-auto" />
+              <h3 class="text-xl font-bold mb-2 text-[#8B4513] pixel-font">Tom</h3>
+            </button>
+
+            <!-- Perro -->
+            <button id="dog" class="bg-white border-4 border-[#8B4513] rounded-lg p-6 text-center transition-transform hover:scale-105 hover:-rotate-1 flex flex-col items-center w-80">
+              <Image src={perro} alt="Pancho" class="pixelated max-h-52 w-auto" />
+              <h3 class="text-xl font-bold mb-2 text-[#8B4513] pixel-font">Pancho</h3>
+            </button>
+
+            <!-- Pollo -->
+            <button id="chicken" class="bg-white border-4 border-[#8B4513] rounded-lg p-6 text-center transition-transform hover:scale-105 hover:-rotate-1 flex flex-col items-center w-80">
+              <Image src={pollo} alt="Manuel" class="pixelated max-h-52 w-auto" />
+              <h3 class="text-xl font-bold mb-2 text-[#8B4513] pixel-font">Manuel</h3>
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+    <label class="modal-backdrop" for="charSelModal">Cerrar</label>
+  </div>
+
+  <!-- Script to handle modal logic -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        console.log("DOM fully loaded and parsed");
+      const modalToggle = document.getElementById("charSelModal");
+
+      // Abrir modal si no hay personaje seleccionado
+      if (
+        modalToggle &&
+        modalToggle instanceof HTMLInputElement &&
+        !localStorage.getItem("selectedCharacter")
+      ) {
+        console.log("No hay personaje seleccionado, abriendo modal");
+        modalToggle.checked = true;
+      }
+
+      // Asignar listeners a botones de personajes
+      ["cat", "dog", "chicken"].forEach((id) => {
+        const btn = document.getElementById(id);
+        if (btn) {
+          btn.addEventListener("click", () => {
+            console.log(`Seleccionaste: ${id}`);
+            localStorage.setItem("selectedCharacter", id);
+            if (modalToggle instanceof HTMLInputElement) {
+                console.log("Cerrando modal");
+              modalToggle.checked = false;
+            }
+          });
+        }
+      });
+    });
+  </script>
 </MainLayout>

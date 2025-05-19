@@ -1,7 +1,8 @@
 ---
+import '../styles/global.css';
 import { SignedIn, SignedOut, SignInButton, SignOutButton, UserButton } from "@clerk/astro/components";
 ---
-<navbar class="px-4 py-3 bg-[#FF9D5C] border-b-4 border-[#8B4513] z-10">
+<nav class="px-4 py-3 bg-[#FF9D5C] border-b-4 border-[#8B4513]">
     <div class="container mx-auto flex justify-between items-center">
     <div class="flex items-center gap-2">
         <!-- <img src="/images/pettopia-logo.png" alt="PetTopia Logo" width="40" height="40" class="pixelated" /> -->
@@ -15,4 +16,4 @@ import { SignedIn, SignedOut, SignInButton, SignOutButton, UserButton } from "@c
         </SignedIn>
     </nav>
     </div>
-</navbar>
+</nav>
