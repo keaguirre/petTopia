@@ -1,0 +1,201 @@
+{ "compressionlevel":-1,
+ "height":10,
+ "infinite":false,
+ "layers":[
+        {
+         "data":[80, 81, 80, 81, 80, 81, 80, 81, 80, 81, 78, 79, 80, 81,
+            92, 93, 92, 93, 92, 93, 92, 93, 92, 93, 90, 91, 92, 93,
+            57, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 59,
+            57, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 58, 59,
+            57, 58, 58, 58, 58, 48, 49, 49, 50, 58, 58, 58, 58, 59,
+            57, 58, 58, 58, 58, 60, 61, 61, 62, 58, 58, 58, 58, 59,
+            57, 58, 58, 58, 58, 60, 61, 61, 62, 58, 58, 58, 58, 59,
+            57, 58, 58, 58, 58, 60, 61, 61, 62, 58, 58, 58, 58, 59,
+            57, 58, 58, 58, 58, 72, 73, 73, 74, 58, 58, 58, 58, 59,
+            69, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 70, 71],
+         "height":10,
+         "id":2,
+         "name":"Capa de patrones 2",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":14,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "data":[0, 110, 0, 0, 109, 110, 0, 0, 110, 0, 0, 0, 110, 0,
+            0, 145, 0, 0, 0, 145, 0, 0, 145, 0, 0, 0, 145, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "height":10,
+         "id":8,
+         "name":"Capa de patrones 4",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":14,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "data":[0, 0, 209, 210, 0, 0, 106, 107, 0, 0, 0, 0, 0, 0,
+            207, 208, 244, 245, 0, 0, 0, 0, 0, 0, 0, 0, 207, 208,
+            242, 243, 279, 280, 0, 0, 102, 103, 0, 0, 0, 0, 242, 243,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 104, 105, 104, 0, 0, 0, 0, 0, 0, 104, 105, 104, 0,
+            0, 0, 108, 0, 0, 0, 142, 143, 0, 0, 0, 108, 0, 0,
+            139, 0, 0, 0, 0, 0, 177, 178, 0, 0, 0, 0, 0, 139,
+            174, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 174,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "height":10,
+         "id":7,
+         "name":"Capa de patrones 3",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":14,
+         "x":0,
+         "y":0
+        }],
+ "nextlayerid":10,
+ "nextobjectid":35,
+ "orientation":"orthogonal",
+ "renderorder":"right-down",
+ "tiledversion":"1.11.2",
+ "tileheight":32,
+ "tilesets":[
+        {
+         "firstgid":1,
+         "source":":\/automap-tiles.tsx"
+        }, 
+        {
+         "columns":12,
+         "firstgid":6,
+         "image":"tileset.png",
+         "imageheight":256,
+         "imagewidth":384,
+         "margin":0,
+         "name":"tileset",
+         "properties":[
+                {
+                 "name":"collides",
+                 "type":"bool",
+                 "value":true
+                }],
+         "spacing":0,
+         "tilecount":96,
+         "tileheight":32,
+         "tiles":[
+                {
+                 "id":72,
+                 "properties":[
+                        {
+                         "name":"collides",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":73,
+                 "properties":[
+                        {
+                         "name":"collides",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":74,
+                 "properties":[
+                        {
+                         "name":"collides",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":75,
+                 "properties":[
+                        {
+                         "name":"collides",
+                         "type":"bool",
+                         "value":true
+                        }]
+                }, 
+                {
+                 "id":84,
+                 "properties":[
+                        {
+                         "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":85,
+                 "properties":[
+                        {
+                         "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":86,
+                 "properties":[
+                        {
+                         "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }, 
+                {
+                 "id":87,
+                 "properties":[
+                        {
+                         "name":"collides",
+                         "type":"bool",
+                         "value":false
+                        }]
+                }],
+         "tilewidth":32
+        }, 
+        {
+         "columns":35,
+         "firstgid":102,
+         "image":"halltiles.png",
+         "imageheight":809,
+         "imagewidth":1129,
+         "margin":0,
+         "name":"halltiless",
+         "spacing":0,
+         "tilecount":875,
+         "tileheight":32,
+         "tilewidth":32
+        }, 
+        {
+         "columns":35,
+         "firstgid":977,
+         "image":"halltiles.png",
+         "imageheight":809,
+         "imagewidth":1129,
+         "margin":0,
+         "name":"halltiless",
+         "spacing":0,
+         "tilecount":875,
+         "tileheight":32,
+         "tilewidth":32
+        }],
+ "tilewidth":32,
+ "type":"map",
+ "version":"1.10",
+ "width":14
+}
