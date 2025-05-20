@@ -9,4 +9,3 @@ export const onRequest = clerkMiddleware((auth, context) => {
         return redirectToSignIn();
     }
 });
-

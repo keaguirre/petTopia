@@ -23,4 +23,5 @@ Gracias a Clerk, la gestión de usuarios en PetTopia es sencilla, segura y compl
 
 ## Screenshots
 ![PetTopia-screenshot](src/media/images/screenshots/index.png)
-![PetTopia-screenshot](src/media/images/screenshots/characterSelect.png)
+<image src="src/media/images/screenshots/characterSelect.png" alt="PetTopia-screenshot" width="100%" align="center" />
+<image src="src/media/images/screenshots/gameplay.gif" alt="PetTopia-screenshot" width="100%" align="center" />

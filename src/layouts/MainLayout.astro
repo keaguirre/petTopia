@@ -16,12 +16,11 @@ const clerkFrontendApi = import.meta.env.PUBLIC_CLERK_FRONTEND_API;
     <meta property="og:description" content="petTopia web minijuego de animales - Midudev Clerk Hackathon">
     <ClientRouter/>
 		<title>PetTopia</title>
-		<script async src="https://cdn.clerk.dev/clerk.js"></script>
-		<script 
-			async 
-			src="https://cdn.clerk.dev/clerk.js" 
-			data-clerk-frontend-api="{$clerkFrontendApi}">
-		</script>
+        <script 
+            async 
+            src="https://cdn.clerk.dev/clerk.js" 
+            data-clerk-frontend-api={clerkFrontendApi}>
+        </script>
 	</head>
 	<body>
 		<slot>

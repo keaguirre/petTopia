@@ -29,7 +29,7 @@ export default function GameCanvas() {
         default: "arcade",
         arcade: {
           gravity: { y: 0 },
-          debug: true,
+          debug: false,
         },
       },
       callbacks: {
@@ -46,5 +46,9 @@ export default function GameCanvas() {
     };
   }, []);
 
-  return <div id="phaser-container" style={{ width: "100%", height: "100%" }} />;
+  return (
+    <div className="flex flex-col justify-center place-self-center mt-15">
+      <div id="phaser-container justify-center" style={{ width: "100%", height: "100%" }} />
+    </div>
+  );
 }
