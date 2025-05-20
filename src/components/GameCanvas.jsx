@@ -47,7 +47,7 @@ export default function GameCanvas() {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center place-self-center mt-15">
+    <div className="flex flex-col justify-center place-self-center mt-15 mx-52">
       <div id="phaser-container justify-center" style={{ width: "100%", height: "100%" }} />
     </div>
   );
