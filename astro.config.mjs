@@ -12,14 +12,9 @@ import react from '@astrojs/react';
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
-    server: {
-      watch: {
-        usePolling: true, // reload for wsl2
-      },
-    },
   },
-  adapter: node({ mode: "standalone" }),
   output: "server",
+  adapter: node({ mode: "standalone" }),
   integrations: [clerk({
     localization: esES,
     appearance: {
