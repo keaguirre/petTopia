@@ -6,9 +6,9 @@ export default class MuebleEditorScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image("tileset", "../../media/assets/tiles/tileset.png");
-    this.load.atlas("hall", "../../media/assets/tiles/halltiles.png", "../../media/assets/tiles/halltiles.json");
-    this.load.tilemapTiledJSON("mapa", "../../media/assets/tiles/mapa.json");
+    this.load.image("tileset", "/tiles/tileset.png");
+    this.load.atlas("hall", "/tiles/halltiles.png", "/tiles/halltiles.json");
+    this.load.tilemapTiledJSON("mapa", "/tiles/mapa.json");
   }
 
   create() {

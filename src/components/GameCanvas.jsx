@@ -2,6 +2,8 @@ import { useEffect, useRef } from "react";
 import Phaser from "phaser";
 import MainScene from "../game/scenes/MainScene";
 import MuebleEditorScene from "../game/scenes/MuebleEditorScene";
+import Jardin from "../game/scenes/JadinScene"; 
+import JardinEditorScene from "../game/scenes/JardinEditorScene";
 
 export default function GameCanvas() {
   const gameRef = useRef(null);
@@ -9,7 +11,7 @@ export default function GameCanvas() {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    const pj = "cat"; // personaje fijo para test
+    const pj = "gato"; // personaje fijo para test
     const isEditor = window.location.search.includes("editor");
 
     const game = new Phaser.Game({
@@ -19,12 +21,15 @@ export default function GameCanvas() {
       zoom: 1.7,
       parent: "phaser-container",
       backgroundColor: "#1e1e1e",
-      scene: isEditor ? [MuebleEditorScene] : [MainScene],
+  scene: [
+  MainScene,
+  ...(isEditor ? [MuebleEditorScene, JardinEditorScene] : [Jardin])
+],
       physics: {
         default: "arcade",
         arcade: {
           gravity: { y: 0 },
-          debug: false,
+          debug: true,
         },
       },
       callbacks: {
