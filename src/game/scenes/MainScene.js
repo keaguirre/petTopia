@@ -17,14 +17,14 @@ export default class MainScene extends Phaser.Scene {
   }
 
   create() {
-    const pj = this.pj || "gato"; // por si acaso no se setea correctamente
+    const pj = this.pj || "gato"; 
     const playerFrames = {
       gato: ["gato 0.aseprite", "gato 1.aseprite", "gato 2.aseprite", "gato 3.aseprite"],
       perro: ["perro 0.aseprite", "perro 1.aseprite", "perro 2.aseprite", "perro 3.aseprite"],
       pollito: ["pollito 0.aseprite", "pollito 1.aseprite", "pollito 2.aseprite", "pollito 3.aseprite"]
     };
   
-    // ⚠️ Validar que el personaje tenga frames
+    //  Validar que el personaje tenga frames
     if (!playerFrames[pj]) {
       console.warn(`Frames no definidos para personaje ${pj}, usando gato`);
       this.pj = "gato";
@@ -107,10 +107,14 @@ export default class MainScene extends Phaser.Scene {
       .setOrigin(0.5, 1);
     this.physics.add.existing(paredCollider2, true);
 
+    const puerta = this.add.rectangle(350, 50, 18, 20, 0x0000ff, 0.2);
+    this.physics.add.existing(puerta, true);
+
     this.physics.add.collider(this.player, capa2);
     this.physics.add.collider(this.player, this.muebles);
     this.physics.add.collider(this.player, paredCollider);
     this.physics.add.collider(this.player, paredCollider2);
+    this.physics.add.collider(this.player, puerta, () => this.cambiarAEscenaJardin(), null, this);
 
     this.cursors = this.input.keyboard.createCursorKeys();
   }
@@ -138,5 +142,8 @@ export default class MainScene extends Phaser.Scene {
     }
 
     this.player.setDepth(this.player.y);
+  }
+   cambiarAEscenaJardin() {
+    this.scene.start("Jardin");
   }
 }
